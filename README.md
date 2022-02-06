@@ -1,11 +1,12 @@
 Nextcloud (Latest)
+Fork from Reiner/nextcloud
 =========
 
 Ansible Playbook to install
 
 * Nextcloud (Latest) - <https://nextcloud.com/>
 * nginx 1.17 - <https://nginx.org/>
-* PHP 7.x - <http://www.php.net/>
+* PHP 8.0 - <http://www.php.net/>
 * MariaDB 10 - <https://mariadb.org/> or PostgreSQL 10 <https://www.postgresql.org/>
 * redis - <https://redis.io/>
 * restic backup - <https://restic.readthedocs.io>
@@ -25,7 +26,7 @@ Warning: Your existing nginx/php/mariadb setup will be over written. Up to now I
 Requirements
 ------------
 
-Ubuntu 16.04 und 18.04, CentOS 7, Debian 9 und 10, Amazon Linux 2, Fedora 30
+Ubuntu 20.04
 
 Not yet tested with other versions and flavours of Linux.
 
@@ -103,9 +104,9 @@ nc_admin             = 'admin'
 nc_passwd            = ''             # leave empty to generate random password
 
 # database settings
-# nc_db_type          = 'mysql'        # (MariaDB)
+nc_db_type          = 'mysql'        # (MariaDB)
 # nc_db_host          = 'localhost'
-nc_db_type           = 'pgsql'        # (PostgreSQL)
+# nc_db_type           = 'pgsql'        # (PostgreSQL)
 nc_db_host           = ''
 nc_db                = 'nextcloud'
 nc_db_user           = 'nextcloud'
@@ -127,7 +128,7 @@ nc_mail_smtpname     =
 nc_mail_smtppwd      =
 
 # php Version
-php_version          = '7.3'
+php_version          = '8.0'
 
 # Install turn server for Nextcloud Talk
 talk_install         = false
